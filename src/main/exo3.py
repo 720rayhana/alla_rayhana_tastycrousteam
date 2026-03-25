@@ -142,7 +142,7 @@ def single_race(env, agents, names, scores):
             pos[i] = info['infos'][str]['position']
             dist[i] = info['infos'][str]['distance']
         steps = steps + 1
-        done = (nb_finished == 5)
+        done = (nb_finished == 1)       # Changement pour que la course se termine quand un seul agent (le nôtre), termine
         positions.append(pos)
         distances.append(dist)
     pos_avg = np.array(positions).mean(axis=0)
