@@ -12,7 +12,7 @@ class Agent6(KartAgent):
         self.agent_positions = []
         self.obs = None
         self.isEnd = False
-        self.name = "Team6" # replace with your chosen name
+        self.name = "Alla-Rayhana"  # Remplacement par (nom-prénom)
 
     def reset(self):
         self.obs, _ = self.env.reset()
@@ -22,15 +22,17 @@ class Agent6(KartAgent):
         return self.isEnd
 
     def choose_action(self, obs):
-        acceleration = random.random()
-        steering = random.random()
+        acceleration = 1    # accélération constante
+        steering = -1        # ou -1 si on veut qu'il tourne à gauche
+        # On ne traite pas le cas où l'agent se cogne à un obstacle en tournant sur lui-même et se retrouve bloqué
         action = {
             "acceleration": acceleration,
             "steer": steering,
-            "brake": False, # bool(random.getrandbits(1)),
-            "drift": bool(random.getrandbits(1)),
-            "nitro": bool(random.getrandbits(1)),
-            "rescue":bool(random.getrandbits(1)),
-            "fire": bool(random.getrandbits(1)),
+            "brake": False, 
+            "drift": False,
+            "nitro": False,
+            "rescue": False,
+            "fire": False,
         }
+        # On désactive toutes les autres actions (drift, brake...) car on ne les utilise pas
         return action
