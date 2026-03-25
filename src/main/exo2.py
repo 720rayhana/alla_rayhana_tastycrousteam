@@ -21,7 +21,9 @@ from pystk2_gymnasium.envs import STKRaceMultiEnv, AgentSpec
 from pystk2_gymnasium.definitions import CameraMode
 
 MAX_TEAMS = 1 # Changement du nombre de Karts affichés
-MAX_STEPS = 200 # Changement du pas de temps à la valeur demandée
+MAX_STEPS = 600 # Changement du pas de temps à la valeur demandée
+# 200 pour la question 2A
+# 600 pour la question 2B, pour avoir le temps de revenir en arrière jusqu'à la fin
 NB_RACES = 1
 
 # Get the current timestamp
