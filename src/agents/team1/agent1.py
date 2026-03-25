@@ -81,20 +81,7 @@ class Agent1(KartAgent):
             "rescue": False,
             "fire": False,
             }
-
-        # Si on est devant l'arrivée de la course, après un grand nombre de steps
-        elif (obs["distance_down_track"] < 10) and self.steps > 300 :
-            # Aucune action, on s'arrête
-            action = {
-                "acceleration": 0,
-                "steer": 0,
-                "brake": False,
-                "drift": False,
-                "nitro": False,
-                "rescue": False,
-                "fire": False,
-            }
-
+            
         # Sinon, on suit la piste en marche arrière
         else : 
             steering = self.follow_track(obs)
